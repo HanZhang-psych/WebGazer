@@ -173,6 +173,9 @@ function checkEyesInValidationBox() {
   }
   else
     faceFeedbackBox.style.border = 'solid black';
+
+  // Han Zhang 09/15/2021
+  return xPositions !== undefined && xPositions && yPositions !== undefined && yPositions;
 }
 
 /**
@@ -612,6 +615,11 @@ function setUserMediaVariable(){
 }
 
 //PUBLIC FUNCTIONS - CONTROL
+
+/** Han Zhang 09/15/2021; expose checkEyesInValidationBox */
+webgazer.checkEyesInValidationBox = function() {
+  return checkEyesInValidationBox();
+}
 
 /**
  * Starts all state related to webgazer -> dataLoop, video collection, click listener
